@@ -1,0 +1,3 @@
+Hola para cambiar entre array y linkedlist cambie la linea
+en que se define la lista del programa, la cual se le llama k.
+En caso de ocupar interfaces hacer KangarooList* k = new etc...

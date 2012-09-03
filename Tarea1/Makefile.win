@@ -1,0 +1,45 @@
+# Project: Tarea1
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = bin/src/main.o bin/src/kangaroo.o bin/src/kangaroolist.o bin/src/kangarooarray.o bin/src/kangaroolinked.o bin/src/node.o $(RES)
+LINKOBJ  = bin/src/main.o bin/src/kangaroo.o bin/src/kangaroolist.o bin/src/kangarooarray.o bin/src/kangaroolinked.o bin/src/node.o $(RES)
+LIBS =  -L"C:/Dev-Cpp/lib"  
+INCS =  -I"C:/Dev-Cpp/include" 
+CXXINCS =  -I"C:/Dev-Cpp/lib/gcc/mingw32/3.4.2/include"  -I"C:/Dev-Cpp/include/c++/3.4.2/backward"  -I"C:/Dev-Cpp/include/c++/3.4.2/mingw32"  -I"C:/Dev-Cpp/include/c++/3.4.2"  -I"C:/Dev-Cpp/include" 
+BIN  = bin/Tarea1.exe
+CXXFLAGS = $(CXXINCS)  
+CFLAGS = $(INCS)  
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before bin/Tarea1.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o "bin\Tarea1.exe" $(LIBS)
+
+bin/src/main.o: src/main.cpp
+	$(CPP) -c src/main.cpp -o bin/src/main.o $(CXXFLAGS)
+
+bin/src/kangaroo.o: src/kangaroo.cpp
+	$(CPP) -c src/kangaroo.cpp -o bin/src/kangaroo.o $(CXXFLAGS)
+
+bin/src/kangaroolist.o: src/kangaroolist.cpp
+	$(CPP) -c src/kangaroolist.cpp -o bin/src/kangaroolist.o $(CXXFLAGS)
+
+bin/src/kangarooarray.o: src/kangarooarray.cpp
+	$(CPP) -c src/kangarooarray.cpp -o bin/src/kangarooarray.o $(CXXFLAGS)
+
+bin/src/kangaroolinked.o: src/kangaroolinked.cpp
+	$(CPP) -c src/kangaroolinked.cpp -o bin/src/kangaroolinked.o $(CXXFLAGS)
+
+bin/src/node.o: src/node.cpp
+	$(CPP) -c src/node.cpp -o bin/src/node.o $(CXXFLAGS)
